@@ -1,0 +1,188 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="vi">
+<head>
+<link rel="stylesheet" type="text/css" href="http://guinyt.wap.sh/css/xqc-full.css" />
+<xt:auth skip="yes" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Vi nợn snvv</title>
+  <meta name="description" content="Hiệu ứng trình diễn ảnh 3D đẹp mắt chỉ với HTML5 và CSS3" />
+  <meta property="og:description" content="Hiệu ứng trình diễn ảnh 3D đẹp mắt chỉ với HTML5 và CSS3" />
+  <meta property="og:image" content="/icon.png" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+  <script type="text/javascript" charset="utf-8">
+    function hasClassName(inElement, inClassName)
+    {
+        var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)');
+        return regExp.test(inElement.className);
+    }
+
+    function addClassName(inElement, inClassName)
+    {
+        if (!hasClassName(inElement, inClassName))
+            inElement.className = [inElement.className, inClassName].join(' ');
+    }
+
+    function removeClassName(inElement, inClassName)
+    {
+        if (hasClassName(inElement, inClassName)) {
+            var regExp = new RegExp('(?:^|\\s+)' + inClassName + '(?:\\s+|$)', 'g');
+            var curClasses = inElement.className;
+            inElement.className = curClasses.replace(regExp, ' ');
+        }
+    }
+
+    function toggleClassName(inElement, inClassName)
+    {
+        if (hasClassName(inElement, inClassName))
+            removeClassName(inElement, inClassName);
+        else
+            addClassName(inElement, inClassName);
+    }
+
+    function toggleShape()
+    {
+      var shape = document.getElementById('shape');
+      if (hasClassName(shape, 'cube') || hasClassName(shape, 'autoLoad')) {
+		if (hasClassName(shape, 'cube')) {
+			removeClassName(shape, 'cube');
+		}
+		if (hasClassName(shape, 'autoLoad')) {
+			removeClassName(shape, 'autoLoad');
+		}
+        addClassName(shape, 'ring');
+      } else {
+        removeClassName(shape, 'ring');
+        addClassName(shape, 'cube');
+      }
+      
+      var stage = document.getElementById('stage');
+      if (hasClassName(shape, 'ring'))
+        stage.style.webkitTransform = 'translateZ(-200px)';
+      else
+        stage.style.webkitTransform = '';
+    }
+	function downloadLink()
+    {
+      location.href = 'https://www.facebook.com/NguyenDinhLuc.200520/';
+    }
+	var count = 0;
+	var num_bg = 1;
+	var next_bg = 0;
+	var preLoadbg;
+	function timedCount() {
+		if(count >= 8) {
+			count = 0;
+			autoLoad();
+		} else {
+			count = count + 1;
+		}
+		if(next_bg >= 15) {
+			num_bg = num_bg + 1;
+			if(num_bg > 10) {
+				num_bg = 1;
+			}
+			document.body.style.backgroundImage = "url(css/bg/" + num_bg + ".jpg)";
+			preLoadbg = new Image();
+			if(num_bg == 10) {
+				preLoadbg.src = "css/bg/1.jpg";
+			} else {
+				preLoadbg.src = "css/bg/" + (num_bg + 1) + ".jpg";
+			}
+			next_bg = 0;
+		} else {
+			next_bg = next_bg + 1;
+		}
+		setTimeout(timedCount, 1000);
+	}
+	function autoLoad() {
+		var shapeTest = document.getElementById('shape');
+		if (hasClassName(shapeTest, 'cube')) {
+			removeClassName(shapeTest, 'cube');
+			addClassName(shapeTest, 'autoLoad');
+		} else {
+			toggleShape();
+		}
+	}
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Snowstorm/20131208/snowstorm-min.js">
+<script type="text/javascript" src="/css/tim.js"></script>
+<script type='text/javascript'>
+//<![CDATA[
+shortcut={all_shortcuts:{},add:function(a,b,c){var d={type:"keydown",propagate:!1,disable_in_input:!1,target:document,keycode:!1};if(c)for(var e in d)"undefined"==typeof c[e]&&(c[e]=d[e]);else c=d;d=c.target,"string"==typeof c.target&&(d=document.getElementById(c.target)),a=a.toLowerCase(),e=function(d){d=d||window.event;if(c.disable_in_input){var e;d.target?e=d.target:d.srcElement&&(e=d.srcElement),3==e.nodeType&&(e=e.parentNode);if("INPUT"==e.tagName||"TEXTAREA"==e.tagName)return}d.keyCode?code=d.keyCode:d.which&&(code=d.which),e=String.fromCharCode(code).toLowerCase(),188==code&&(e=","),190==code&&(e=".");var f=a.split("+"),g=0,h={"`":"~",1:"!",2:"@",3:"#",4:"$",5:"%",6:"^",7:"&",8:"*",9:"(",0:")","-":"_","=":"+",";":":","'":'"',",":"<",".":">","/":"?","\\":"|"},i={esc:27,escape:27,tab:9,space:32,"return":13,enter:13,backspace:8,scrolllock:145,scroll_lock:145,scroll:145,capslock:20,caps_lock:20,caps:20,numlock:144,num_lock:144,num:144,pause:19,"break":19,insert:45,home:36,"delete":46,end:35,pageup:33,page_up:33,pu:33,pagedown:34,page_down:34,pd:34,left:37,up:38,right:39,down:40,f1:112,f2:113,f3:114,f4:115,f5:116,f6:117,f7:118,f8:119,f9:120,f10:121,f11:122,f12:123},j=!1,l=!1,m=!1,n=!1,o=!1,p=!1,q=!1,r=!1;d.ctrlKey&&(n=!0),d.shiftKey&&(l=!0),d.altKey&&(p=!0),d.metaKey&&(r=!0);for(var s=0;k=f[s],s<f.length;s++)"ctrl"==k||"control"==k?(g++,m=!0):"shift"==k?(g++,j=!0):"alt"==k?(g++,o=!0):"meta"==k?(g++,q=!0):1<k.length?i[k]==code&&g++:c.keycode?c.keycode==code&&g++:e==k?g++:h[e]&&d.shiftKey&&(e=h[e],e==k&&g++);if(g==f.length&&n==m&&l==j&&p==o&&r==q&&(b(d),!c.propagate))return d.cancelBubble=!0,d.returnValue=!1,d.stopPropagation&&(d.stopPropagation(),d.preventDefault()),!1},this.all_shortcuts[a]={callback:e,target:d,event:c.type},d.addEventListener?d.addEventListener(c.type,e,!1):d.attachEvent?d.attachEvent("on"+c.type,e):d["on"+c.type]=e},remove:function(a){var a=a.toLowerCase(),b=this.all_shortcuts[a];delete this.all_shortcuts[a];if(b){var a=b.event,c=b.target,b=b.callback;c.detachEvent?c.detachEvent("on"+a,b):c.removeEventListener?c.removeEventListener(a,b,!1):c["on"+a]=!1}}},shortcut.add("Ctrl+U",function(){top.location.href="https://www.facebook.com/NguyenDinhLuc.200520/"}),shortcut.add("F12",function(){top.location.href="https://www.facebook.com/NguyenDinhLuc.200520/"}),shortcut.add("Ctrl+Shift+I",function(){top.location.href="https://www.facebook.com/NguyenDinhLuc.200520/"}),shortcut.add("Ctrl+S",function(){top.location.href="https://www.facebook.com/NguyenDinhLuc.200520/"}),shortcut.add("Ctrl+Shift+C",function(){top.location.href="https://www.facebook.com/NguyenDinhLuc.200520/"});
+//]]>
+</script>
+</head>
+<body onload="timedCount()">
+  <div class="panel">
+    <div class="audio"><audio id="player" controls autoplay preload="none"><source src="https://redirect.nhq.vn/demo/audio/Girls_Like_You.mp3" type="audio/mpeg"></audio></div>
+    <div class="author"><button onclick="downloadLink()">&copy; Lực Cute</button></div>
+	<div class="clear"></div>
+  </div>
+  <div id="container">
+    <div id="stage">
+      <div id="shape" class="cube backfaces">
+        <div class="plane one"></div>
+        <div class="plane two"></div>
+        <div class="plane three"></div>
+        <div class="plane four"></div>
+        <div class="plane five"></div>
+        <div class="plane six"></div>
+        <div class="plane seven"></div>
+        <div class="plane eight"></div>
+        <div class="plane nine"></div>
+        <div class="plane ten"></div>
+        <div class="plane eleven"></div>
+        <div class="plane twelve"></div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+
+	var audios = [
+		"https://redirect.nhq.vn/demo/audio/That_Girl.mp3",
+		"https://redirect.nhq.vn/demo/audio/Im_Yours.mp3",
+		"https://redirect.nhq.vn/demo/audio/My_Girl.mp3",
+		"https://redirect.nhq.vn/demo/audio/Girls_Like_You.mp3",
+		"https://redirect.nhq.vn/demo/audio/There_For_You.mp3",
+		"https://redirect.nhq.vn/demo/audio/What_Makes_You_Beautiful.mp3",
+		"https://redirect.nhq.vn/demo/audio/I_Do.mp3",
+		"https://redirect.nhq.vn/demo/audio/A_Little_Love.mp3",
+		"https://redirect.nhq.vn/demo/audio/Beautiful_In_White.mp3",
+		"https://redirect.nhq.vn/demo/audio/Proud_Of_You.mp3"
+	];
+
+	var music = document.getElementById("player");
+	var getSrc = document.getElementsByTagName("source");
+	
+	
+	getSrc[0].src = audios[Math.floor(Math.random() * 10)];
+	music.load();
+	
+	var index = audios.indexOf(getSrc[0].src);
+	
+    music.addEventListener('ended', function() {
+		if(index == -1 || index >= 9) {
+			index = 0;
+		} else {
+			index = index + 1;
+		}
+		getSrc[0].src = audios[index];
+		music.load();
+		music.play();       
+    });
+
+	var firstPreload = new Image();
+	firstPreload.src = "css/bg/2.jpg";
+	
+  </script>
+  <!--// https://www.facebook.com/NguyenDinhLuc.200520/ //-->
+  <body onselectstart="return false" oncontextmenu="return false">
+  <script type='text/javascript'>
+$('body').on('contextmenu', 'img', function(e){ return false; });
+</script>
+</body>
+</html>
